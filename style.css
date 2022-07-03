@@ -1,0 +1,86 @@
+.container {
+    margin: 20px 0 0 20px;
+    width: 100vw;
+    display: flex;
+  }
+  
+  .circle {
+    background: #456789;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+    position: absolute;
+    animation: bounce;
+    animation-duration: 0.25s;
+    animation-direction: alternate;
+    animation-iteration-count:infinite;
+    animation-timing-function: ease;
+    
+  }
+  .square {
+    background: #456789;
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+    position: absolute;
+    left: 80px;
+    animation: fly 3s forwards cubic-bezier(.51,.02,.66,.98) 5s;
+    
+  }
+  
+  .triangle {
+    margin: 10px;
+    border-style: solid;
+    border-color: transparent transparent #456789 transparent;
+    border-width: 0 20px 30px 20px;
+    position: absolute;
+    left: 130px;
+    animation: zigzag1 0.4s ease-in-out 1s , zigzag 0.4s ease-in-out 1.4s 8 alternate,zigzag1 0.4s linear reverse 4.6s ,downup 2s ease-in-out 1s 2 alternate;
+  }
+  
+  @keyframes bounce {
+    0%{
+      margin-top: 25px;
+      width: 35px;
+      height: 20px;
+    }
+    100%{
+      margin-top: 0px;
+      width: 30px;
+      height: 30px;
+  }
+  }
+  
+  @keyframes fly{
+      100%{
+        left: 94%;      
+      }
+  }
+  
+  @keyframes downup {
+    0% {
+      top: 20px;
+    }
+    100% {  
+      top: 94%;
+    }
+  }
+  
+  @keyframes zigzag1 {
+    0%{
+      left: 130px;    
+    }
+    
+    100%{
+      left: 0px;    
+    }
+  }
+  @keyframes zigzag {
+    0%{
+      left:0px;
+    }
+    100%{
+      left: 94%;
+    }
+  }
